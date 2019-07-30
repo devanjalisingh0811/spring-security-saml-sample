@@ -107,7 +107,7 @@ public class SAMLConfig {
     @Bean
     public SAMLLogoutFilter samlLogoutFilter() {
         SAMLLogoutFilter filter = new SAMLLogoutFilter(successLogoutHandler(), new LogoutHandler[]{logoutHandler()}, new LogoutHandler[]{logoutHandler()});
-       // filter.setFilterProcessesUrl("/saml/logout");
+        filter.setFilterProcessesUrl("/saml/logout");
         return filter;
     }
 
@@ -176,7 +176,6 @@ public class SAMLConfig {
     public MetadataGenerator metadataGenerator(KeyManager keyManager) {
         MetadataGenerator generator = new MetadataGenerator();
         generator.setEntityId("localhost-demo");
-        //generator.setEntityId("deva_saml_poc");
         generator.setExtendedMetadata(extendedMetadata());
         generator.setIncludeDiscoveryExtension(false);
         generator.setKeyManager(keyManager);

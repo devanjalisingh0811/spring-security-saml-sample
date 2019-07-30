@@ -22,8 +22,6 @@ public class SAMLUserDetailsServiceImpl implements SAMLUserDetailsService {
 
 	public Object loadUserBySAML(SAMLCredential credential) throws UsernameNotFoundException {
 		log.info("Login received for user {}", credential.getNameID().getValue());
-
-		log.info("Login received for user {}", credential.getNameID().getValue());
 		return new SAMLUserDetails(credential);
 	}
 }
