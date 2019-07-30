@@ -15,8 +15,8 @@ public class HomeController {
     @RequestMapping("/home")
     public ModelAndView home(@SAMLUser SAMLUserDetails user) {
         ModelAndView homeView = new ModelAndView("home");
-        //homeView.addObject("userId", user.getUsername());
-        //homeView.addObject("samlAttributes", user.getAttributes());
+        homeView.addObject("userId", user.getUsername());
+        homeView.addObject("samlAttributes", user.getAttributes());
         return homeView;
     }
 

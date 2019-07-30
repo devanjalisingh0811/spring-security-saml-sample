@@ -175,8 +175,8 @@ public class SAMLConfig {
     @Bean
     public MetadataGenerator metadataGenerator(KeyManager keyManager) {
         MetadataGenerator generator = new MetadataGenerator();
-        //generator.setEntityId("localhost-demo");
-        generator.setEntityId("deva_saml_poc");
+        generator.setEntityId("localhost-demo");
+        //generator.setEntityId("deva_saml_poc");
         generator.setExtendedMetadata(extendedMetadata());
         generator.setIncludeDiscoveryExtension(false);
         generator.setKeyManager(keyManager);
