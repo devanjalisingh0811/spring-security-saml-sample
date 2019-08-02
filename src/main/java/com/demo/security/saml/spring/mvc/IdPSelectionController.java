@@ -1,11 +1,12 @@
 package com.demo.security.saml.spring.mvc;
 
-/**
- * @author devanjali singh
- */
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toMap;
 
-import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.saml.SAMLConstants;
@@ -15,15 +16,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
+/**
+ * @author devanjali singh
+ */
 
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.toMap;
+import lombok.SneakyThrows;
 
 @Controller
 @RequestMapping("/idpselection")
-@Slf4j
 public class IdPSelectionController {
 
     @Autowired
