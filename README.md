@@ -67,6 +67,14 @@ Click the **Next** button. This brings you to the second step, configuring SAML.
 
 <img src="src/main/resources/static/img/okta_configuration1.png" alt="SAML Integration" width="800"/>
 
+Generate keystore using command:-
+**keytool -genkeypair -alias devanjali -keypass devanjali -storepass devanjali -keystore saml-demo.jks -keysize 1024**
+
+Export certificate from keystore:-
+**keytool -export -alias devanjali -file saml-demo.cer -keystore saml-demo.jks**
+
+use saml-demo.cer in OKTA configurations as **Singnature certificate**
+
 <img src="src/main/resources/static/img/okta_configuration2.png" alt="SAML Integration" width="800"/>
 
 Scroll to the bottom of the form and click **Next**. This will bring you to the third step, feedback. Choose "I'm an Okta customer adding an internal app” and optionally select the App type.
